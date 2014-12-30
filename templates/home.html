@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Welcome to Tinderbox<h2>
+    <h3>Helping create a bright spark. (Search is currently a bit slow)<h3>
+    <form method ="post" action="{{ url_for('runSearch') }}">
+    Name of School: <input type="text" name="searchName" <br>
+    <input type="submit" value="Submit">
+    </form>
+  </div>
+{% endblock %}

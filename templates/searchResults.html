@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+  
+{% block content %}
+  <h3>Search Results</h3>
+  <p>Google Search <strong> {{searchTerm}} </strong> </p>
+
+  {% for result in results %}
+    <div><p>{{ result.title }} : <a href="{{ result.link }}"> "{{ result.link }}"</a><b><li> {{ result.emailcount }} emails found </b> {{ result.emails }}</li> <li> phone numbers {{ result.phonecount }} {{result.phones}}</p></div>
+        
+
+  {% endfor %}
+{% endblock %}
