@@ -3,9 +3,23 @@
   <div class="jumbo">
     <h2>Welcome to Tinderbox<h2>
     <h3>Helping create a bright spark. (Search is currently a bit slow)<h3>
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	      <ul class=flashes>
+	        {% for message in messages %}
+	          {{ message }}
+	        {% endfor %}
+	      </ul>
+	    {% endif %}
+  	{% endwith %}
     <form method ="post" action="{{ url_for('runSearch') }}">
     Name of School: <input type="text" name="searchName" <br>
     <input type="submit" value="Submit">
+
+    <select type="text" name="searchMode">
+  		<option value="rel">Bri</option>
+  		<option value="dev">Tom</option>
+	</select>
     </form>
   </div>
 {% endblock %}

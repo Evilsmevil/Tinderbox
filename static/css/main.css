@@ -46,6 +46,14 @@ div.jumbo {
      -moz-border-radius: 6px;
           border-radius: 6px;
 }
+
+div.item {
+  padding: 5px 0 10px 0;
+  background-color: #dddddd;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
  
 h2 {
   font-size: 3em;
@@ -63,6 +71,13 @@ h3 {
   color: #999;
 }
 
+p.normal {
+  text-indent: 5%;
+}
+
+li.normal {
+  text-indent: 5%;
+}
 /*
  * Display navigation links inline
  */

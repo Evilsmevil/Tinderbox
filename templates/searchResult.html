@@ -1,0 +1,13 @@
+{% extends "searchResults.html" %}
+  
+{% block searchResult %}
+<p class="normal">
+  <a href="{{ result.link }}"> "{{ result.title }}"</a> : 
+  <button id="copy-button{{result.link}}" data-clipboard-text="{{result.link}}" title="Copy Link">Copy Link</button>
+  <script type="text/javascript"> 
+  var client = new ZeroClipboard( document.getElementById("copy-button{{result.link}}") );
+  </script>
+  <b><li class="normal"> {{ result.emailcount }} emails found </b> {{ result.emails }}</li> 
+  <li class="normal"> phone numbers {{ result.phonecount }} {{result.phones}}  </li>
+  </p>
+{% endblock %}
