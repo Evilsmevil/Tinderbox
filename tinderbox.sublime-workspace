@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"a",
+				"app"
+			],
+			[
+				"sit",
+				"siteResponse"
+			],
+			[
+				"last",
+				"lastSearch"
+			],
+			[
 				"search",
 				"searchMode"
 			],
@@ -55,24 +67,25 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 2841,
+				"buffer_size": 3182,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "templates/layout.html",
+			"file": "templates/home.html",
 			"settings":
 			{
-				"buffer_size": 588,
+				"buffer_size": 1113,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/searchResult.html",
+			"contents": "convert 12 to base 8\n\nif number is greater than base then we need to continue\n\n12 is greather than 8\n\nhow many 8s to we need?\n\n8/12 trucate to 1\n\nfirst/last char is 1\n\n1.\n\ntake first number * base away from current number\n\n12 - (1*8) = 4\n\n4 is less than 8 so we're on the home stretch\n\nappend\n\n14\n\n--------------------------------------------------------\n\n100\n\n100 /8 = 12.5",
 			"settings":
 			{
-				"buffer_size": 596,
-				"line_ending": "Windows"
+				"buffer_size": 374,
+				"line_ending": "Windows",
+				"name": "convert 12 to base 8"
 			}
 		},
 		{
@@ -82,46 +95,55 @@
 				"buffer_size": 437,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "templates/home.html",
-			"settings":
-			{
-				"buffer_size": 947,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "static/css/main.css",
-			"settings":
-			{
-				"buffer_size": 1345,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 104.0,
 		"selected_items":
 		[
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
 				"inden",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"vim",
+				"Set Syntax: VimL"
+			],
+			[
+				"package control install",
+				"Package Control: Install Package"
+			],
+			[
+				"git stat",
+				"Git: Status"
 			],
 			[
 				"inde",
 				"Indentation: Reindent Lines"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -140,6 +162,12 @@
 	],
 	"file_history":
 	[
+		"/C/appengine-try-python-flask/Tinderbox/templates/searchResult.html",
+		"/C/appengine-try-python-flask/Tinderbox/templates/searchResults.html",
+		"/C/appengine-try-python-flask/Tinderbox/static/css/main.css",
+		"/C/appengine-try-python-flask/Tinderbox/main.py",
+		"/C/appengine-try-python-flask/Tinderbox/templates/layout.html",
+		"/C/appengine-try-python-flask/Tinderbox/templates/home.html",
 		"/C/appengine-try-python-flask/Tinderbox/static/js/main.js",
 		"/C/appengine-try-python-flask/Tinderbox/lib/werkzeug/contrib/securecookie.py",
 		"/C/appengine-try-python-flask/Tinderbox/CONTRIB.md",
@@ -149,8 +177,6 @@
 		"/C/appengine-try-python-flask/Tinderbox/run_dev.bat",
 		"/C/appengine-try-python-flask/Tinderbox/deploy.bat",
 		"/C/appengine-try-python-flask/Tinderbox/README.md",
-		"/C/appengine-try-python-flask/Tinderbox/templates/searchResults.html",
-		"/C/appengine-try-python-flask/Tinderbox/static/css/main.css",
 		"/C/appengine-try-python-flask/appengine-try-python-flask/app.yaml",
 		"/C/appengine-try-python-flask/appengine-try-python-flask/appengine_config.py",
 		"/C/appengine-try-python-flask/appengine-try-python-flask/main.py",
@@ -174,6 +200,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"info",
 			"item",
 			"info",
 			"20px",
@@ -197,7 +224,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -206,15 +233,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2841,
+						"buffer_size": 3182,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								552,
-								552
+								2583,
+								2583
 							]
 						],
 						"settings":
@@ -223,27 +250,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "templates/layout.html",
+					"file": "templates/home.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 588,
+						"buffer_size": 1113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								166,
-								166
+								519,
+								519
 							]
 						],
 						"settings":
@@ -256,35 +283,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "templates/searchResult.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 596,
+						"buffer_size": 374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								580,
-								580
+								360,
+								360
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"auto_name": "convert 12 to base 8",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -300,8 +327,8 @@
 						"selection":
 						[
 							[
-								326,
-								326
+								437,
+								437
 							]
 						],
 						"settings":
@@ -312,65 +339,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "templates/home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 947,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								947,
-								947
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "static/css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1345,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								828,
-								828
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 478.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -423,20 +392,32 @@
 		"selected_items":
 		[
 			[
-				"css",
-				"static\\css\\main.css"
+				"search",
+				"templates\\searchResults.html"
+			],
+			[
+				"home.",
+				"templates\\home.html"
+			],
+			[
+				"searchresults",
+				"templates\\searchResults.html"
+			],
+			[
+				"searchresul",
+				"templates\\searchResult.html"
 			],
 			[
 				"main",
 				"main.py"
 			],
 			[
-				"home",
-				"templates\\home.html"
+				"css",
+				"static\\css\\main.css"
 			],
 			[
-				"search",
-				"templates\\searchResults.html"
+				"home",
+				"templates\\home.html"
 			],
 			[
 				"sear",
@@ -465,7 +446,7 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,

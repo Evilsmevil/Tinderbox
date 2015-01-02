@@ -13,7 +13,7 @@
 	    {% endif %}
   	{% endwith %}
     <form method ="post" action="{{ url_for('runSearch') }}">
-    Name of School: <input type="text" name="searchName" <br>
+    Name of School: <input type="text" size=40 autofocus name="searchName"{%if lastSearch is not none %} value="{{lastSearch}} "{% endif %}<br>
     <input type="submit" value="Submit">
     <select type="text" name="searchMode">
   		<option value="rel">Bri</option>
