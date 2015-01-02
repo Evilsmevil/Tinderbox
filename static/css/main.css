@@ -17,12 +17,13 @@ header {
   margin-bottom: 10px;
 }
  
-header h1.logo {
+header h1.logo a{
   margin: 0;
-  font-size: 1.7em;
+  font-size: 1.0em;
   color: #fff;
   text-transform: uppercase;
   float: left;
+  text-decoration: none;
 }
  
 header h1.logo:hover {
@@ -47,12 +48,13 @@ div.jumbo {
           border-radius: 6px;
 }
 
-div.item {
-  padding: 5px 0 10px 0;
+div.odd {
+  padding: 1% 0 1% 0;
   background-color: #dddddd;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+}
+
+div.even {
+  padding: 1% 0 1% 0;
 }
  
 h2 {

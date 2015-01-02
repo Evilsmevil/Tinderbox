@@ -15,11 +15,11 @@
     <form method ="post" action="{{ url_for('runSearch') }}">
     Name of School: <input type="text" name="searchName" <br>
     <input type="submit" value="Submit">
-
     <select type="text" name="searchMode">
   		<option value="rel">Bri</option>
-  		<option value="dev">Tom</option>
+  		<option value="dev"{% if searchMode is not none %}selected{%endif%}>Tom</option>
 	</select>
+	<input type="checkbox" name="googlefu" value="use" title="turn this off if you don't get enough results" {% if usegooglefu is not none %} checked {%endif%}> <span title="turn this off if you don't get enough results"> googlefu </span> </input>
     </form>
   </div>
 {% endblock %}

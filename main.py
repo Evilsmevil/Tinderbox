@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, flash
-import urllib2
+from flask import Flask, render_template, request, flash, session
+from google.appengine.api import urlfetch
 import urllib
 import json
 import pprint
@@ -14,23 +14,32 @@ app.secret_key = 'some_secret'
 
 @app.route('/')
 def home():
-    """Return a friendly HTTP greeting."""
-    return render_template('home.html')
+	usegooglefu = session.get('usegooglefu')
+	searchMode = session.get('searchMode')
 
+	return render_template('home.html', usegooglefu=usegooglefu, searchMode=searchMode)
+	
 @app.route('/about')
 def about():
   return render_template('about.html')
 
 @app.route('/runSearch/', methods=['POST'])
 def runSearch():
-	searchTerm = request.form['searchName'] + ' music' + ' *@*' #+ 'music +*@*'
+
+	googlefu = ''
+
+	if 'googlefu' in request.form :
+		googlefu = ' *@*' #+ 'music +*@*' 
+
+	updatePrefs()
+	searchTerm = request.form['searchName'] + ' music' + googlefu 
 	url = 'https://www.googleapis.com/customsearch/v1?q=' + searchTerm + '&key=AIzaSyCxI21xhbKxiuXPMEv_DXYKURFFQEwhKdo&cx=000191502597213523554:tr_xxzw3jwa'
 	response = urllib.urlopen(url)
-	app.logger.info(url)
+	#response = urlfetch.fetch(url)
 
+	app.logger.info('search term ' + searchTerm)
+	
 	data = json.load(response)
-	app.logger.info('num things found ' + str(data['searchInformation']['totalResults']))
-
 	if int(data['searchInformation']['totalResults']) > 0 :
 		searchTerm=data['queries']['request'][0]['searchTerms']
 
@@ -38,6 +47,7 @@ def runSearch():
 
 		#dev mode only looks at the first result
 		if request.form['searchMode'] == "dev":
+			session['searchMode'] = 'yes'
 			num=1
 
 		for i in range(0, num) :
@@ -45,9 +55,10 @@ def runSearch():
 			try:
 				if '.pdf' in siteurl:
 					raise Exception('unable to parse pdfs')
-				siteResponse = urllib.urlopen(siteurl)
-				match = re.findall(r'[\w\.-]+@[\w\.-]+', siteResponse.read())
-				phonematch = re.findall(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', siteResponse.read())
+				#siteResponse = urllib.urlopen(siteurl)
+				siteResponse = urlfetch.fetch(url)
+				match = re.findall(r'[\w\.-]+@[\w\.-]+', siteResponse.content)
+				phonematch = re.findall(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', siteResponse.content)
 				data['items'][i]['emails'] = match
 				data['items'][i]['emailcount'] = len(match)
 				data['items'][i]['phones'] = phonematch
@@ -68,3 +79,16 @@ def runSearch():
 def page_not_found(e):
     """Return a custom 404 error."""
     return 'Sorry, nothing at this URL.', 404
+
+def updatePrefs() :
+	#save googlefu preference (yes/none)
+	if 'googlefu' in request.form :
+		session['usegooglefu'] = 'yes'
+	else :
+		session.pop('usegooglefu', None)
+
+	#save dev mode prefs
+	if request.form['searchMode'] == "dev":
+		session['searchMode'] = 'yes'
+	else:
+		session.pop('searchMode', None)
